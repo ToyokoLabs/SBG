@@ -1,0 +1,9 @@
+Minimizacion
+&cntrl
+imin=1,
+maxcyc=8000,
+ncyc=7500,
+cut=999.1,
+ntpr=1000,
+ntb=0,
+&end
