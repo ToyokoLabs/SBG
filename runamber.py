@@ -41,7 +41,7 @@ with open('minipeprepo') as peprepofh:
         run_all(new_pep, i) 
 logging.info("END sander")
 logging.info("Compressing...")
-comp_stage = 'tar -czf {}.tar.gz *-R{}.*'.format(dirname, replic_number)
+comp_stage = 'tar -czf {}.tar.gz *-R{}.*.1.*'.format(dirname, replic_number)
 result = subprocess.run(comp_stage, shell=True)
 subprocess.run(comp_stage, shell=True).check_returncode()
 logging.info("Done")
