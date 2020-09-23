@@ -5,7 +5,7 @@ import os
 # divide pool
 rootdir = 'all'
 cores = 32
-replic = 1
+replic = X # EDIT!
 
 # Generate bash script for uploading
 line1 = 'cd 1-R{}\ngsutil cp *.tar.gz gs://sbglabdata/tripep\n'.format(replic)
