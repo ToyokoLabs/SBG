@@ -7,7 +7,14 @@ rootdir = 'all'
 cores = 32
 replic = sys.argv[1]
 
-# Generate bash script
+# Generate bash script for uploading
+line1 = 'cd 1-R{}\ngsutil cp *.tar.gz gs://sbglabdata/tripep\n'.format(replic)
+newlines = ''
+for n in range(cores-1):
+    newlines+='cd ../{}-R{}\ngsutil cp *.tar.gz gs://sbglabdata/tripep\n'.format(n+2,replic)
+uploadlines = line1 + newlines
+
+# Generate bash script for running
 line1 = 'cd 1-R{}\npython3 runamber.py &\n'.format(replic)
 newlines = ''
 for n in range(cores-1):
@@ -23,6 +30,8 @@ os.mkdir(rootdir)
 with open('{}{}runall.sh'.format(rootdir, os.sep), 'w') as fout:
     fout.write(alllines)
 
+with open('{}{}uploadall.sh'.format(rootdir, os.sep), 'w') as fout:
+    fout.write(uploadlines)
 
 for core in range(cores):
     new_dir = '{}{}{}-R{}'.format(rootdir, os.sep, core+1, replic)
