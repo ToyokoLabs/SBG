@@ -5,7 +5,7 @@ The dataset is composed of tar.bz2 files with the following name convention:
 
 N[1]C[2]-R[3].tar.bz2 where:
 
-1. First Amino Acids using IUPAC three letter notation.
+1. First 4 Amino Acids (or 2 for tripeptide) using IUPAC three letter notation.
 2. Last Amino Acid using IUPAC three letter notation
 3. Replica number from 1 to 3.
 
