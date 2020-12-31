@@ -7,3 +7,5 @@ Our main interests are: Development of tools for the quality assessment of prote
 This repository has information related to Conformational Space of Short Pepetides project. Where we calculated the structure of all peptides up to 5 Amino Acid, using Amber.
 
 List of publications of the SBG group: http://ufq.unq.edu.ar/sbg/publications.html
+
+For more information on the data format please check the [manifiest file](https://github.com/ToyokoLabs/SBG/blob/master/data/manifest.md).
