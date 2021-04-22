@@ -207,20 +207,20 @@ class Parsedata():
                 self.rmsf_ehbond = float(x[2].split()[0])
                 self.rmsf_restraint = float(x[3].split()[0])                
         self.allvars = (self.date, self.time, self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
-        self.ntheth, self.mtheta, self.nphih, self.mphia, self.nhparm, self.nparm, self.nnb, self.nres, self.nbona,
-        self.ntheta, self.nphia, self.numbnd, self.numang, self.nptra, self.natyp, self.nphb, self.ifbox, self.nmxrs,
-        self.ifcap, self.nextra, self.ncopy, self.imin, self.nmropt, self.ntx, self.irest, self.ntrxi, self.ntxo,
-        self.ntpr, self.ntrxo, self.ntwr, self.iwrap, self.ntwx, self.ntwv,self.ntwe, self.ioutfm,self.ntwprt,
-        self.idecomp, self.rbornstat, self.ntf, self.ntb, self.igb, self.nsnb, self.ipol, self.gbsa, self.iesp,
-        self.dielc, self.cut, self.intdiel, self.ibelly, self.ntr, self.nstlim, self.nscm, self.nrespa, self.t,
-        self.dt, self.vlimit, self.ig, self.temp0, self.tempi, self.gamma_ln, self.ntc, self.jfastw, self.tol,
-        self.sum_charges, self.rndfp, self.rndfs, self.ndfmin, self.num_noshake, self.corrected_rndfp, self.rndf,
-        self.local_nonbond, self.total_nonbond, self.avg_nstep, self.avg_time_ps, self.avg_temp_k, self.avg_press,
-        self.avg_etot, self.avg_ektot, self.avg_eptot, self.avg_bond, self.avg_angle, self.avg_dihed, self.avg_nb,
-        self.avg_eel, self.avg_vdwaals, self.avg_eelec, self.avg_ehbond, self.avg_restraint, self.rmsf_nstep,
-        self.rmsf_time_ps, self.rmsf_temp_k, self.rmsf_press, self.rmsf_etot, self.rmsf_ektot, self.rmsf_eptot,
-        self.rmsf_bond, self.rmsf_angle, self.rmsf_dihed, self.rmsf_nb, self.rmsf_eel, self.rmsf_vdwaals,
-        self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint)
+            self.ntheth, self.mtheta, self.nphih, self.mphia, self.nhparm, self.nparm, self.nnb, self.nres, self.nbona,
+            self.ntheta, self.nphia, self.numbnd, self.numang, self.nptra, self.natyp, self.nphb, self.ifbox, self.nmxrs,
+            self.ifcap, self.nextra, self.ncopy, self.imin, self.nmropt, self.ntx, self.irest, self.ntrxi, self.ntxo,
+            self.ntpr, self.ntrxo, self.ntwr, self.iwrap, self.ntwx, self.ntwv,self.ntwe, self.ioutfm,self.ntwprt,
+            self.idecomp, self.rbornstat, self.ntf, self.ntb, self.igb, self.nsnb, self.ipol, self.gbsa, self.iesp,
+            self.dielc, self.cut, self.intdiel, self.ibelly, self.ntr, self.nstlim, self.nscm, self.nrespa, self.t,
+            self.dt, self.vlimit, self.ig, self.temp0, self.tempi, self.gamma_ln, self.ntc, self.jfastw, self.tol,
+            self.sum_charges, self.rndfp, self.rndfs, self.ndfmin, self.num_noshake, self.corrected_rndfp, self.rndf,
+            self.local_nonbond, self.total_nonbond, self.avg_nstep, self.avg_time_ps, self.avg_temp_k, self.avg_press,
+            self.avg_etot, self.avg_ektot, self.avg_eptot, self.avg_bond, self.avg_angle, self.avg_dihed, self.avg_nb,
+            self.avg_eel, self.avg_vdwaals, self.avg_eelec, self.avg_ehbond, self.avg_restraint, self.rmsf_nstep,
+            self.rmsf_time_ps, self.rmsf_temp_k, self.rmsf_press, self.rmsf_etot, self.rmsf_ektot, self.rmsf_eptot,
+            self.rmsf_bond, self.rmsf_angle, self.rmsf_dihed, self.rmsf_nb, self.rmsf_eel, self.rmsf_vdwaals,
+            self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint)
 
 
 pd = Parsedata('NARGSERCVAL-R4.dmd.1.out')
