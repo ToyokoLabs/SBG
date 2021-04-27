@@ -1,14 +1,12 @@
 # read peptides
 
 class Parsedata():
-    def __init__(self, filename):
-        self.fn = filename
+    def __init__(self, lines):
+        self.lines = lines
 
     def parse(self):
-        with open(self.fn) as fh:
-            lines = fh.readlines()
         ave_steps = False
-        for line in lines:
+        for line in self.lines:
             if line.startswith('| Run on '):
                 x = line.split(' ')
                 self.date = x[3]
@@ -205,7 +203,7 @@ class Parsedata():
                 x = line.split('=')
                 self.rmsf_eelec = float(x[1].split()[0])
                 self.rmsf_ehbond = float(x[2].split()[0])
-                self.rmsf_restraint = float(x[3].split()[0])                
+                self.rmsf_restraint = float(x[3].split()[0])
         self.allvars = (self.date, self.time, self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
             self.ntheth, self.mtheta, self.nphih, self.mphia, self.nhparm, self.nparm, self.nnb, self.nres, self.nbona,
             self.ntheta, self.nphia, self.numbnd, self.numang, self.nptra, self.natyp, self.nphb, self.ifbox, self.nmxrs,
@@ -223,7 +221,7 @@ class Parsedata():
             self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint)
 
 
-pd = Parsedata('NARGSERCVAL-R4.dmd.1.out')
-pd.parse()
+#pd = Parsedata('NARGSERCVAL-R4.dmd.1.out')
+#pd.parse()
 
 
