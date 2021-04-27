@@ -18,14 +18,9 @@ class Getfiles3pep():
         for replica in range(1,6):
             x = requests.get(BASE_URL.format(peptide, replica))
             results.append(x.text)
-        #f = 'NALAALACALA-R1.dmd.1.out'
         return results
 
 
-#x = Getfiles3pep()
-#k = x.get('ALAALACALA')
-
-#import pdb; pdb.set_trace()
 
 
 

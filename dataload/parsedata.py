@@ -7,11 +7,7 @@ class Parsedata():
     def parse(self):
         ave_steps = False
         for line in self.lines:
-            if line.startswith('| Run on '):
-                x = line.split(' ')
-                self.date = x[3]
-                self.time = x[5][:-1]
-            elif line.startswith('|Largest sphere to fit in unit cell has radius ='):
+            if line.startswith('|Largest sphere to fit in unit cell has radius ='):
                 x = line.split('=')
                 self.sphere_radius = float((x[1].strip()))
             elif 'NATOM' in line and 'NTYPES' in line and 'NBONH' in line and 'MBONA' in line:
@@ -204,7 +200,7 @@ class Parsedata():
                 self.rmsf_eelec = float(x[1].split()[0])
                 self.rmsf_ehbond = float(x[2].split()[0])
                 self.rmsf_restraint = float(x[3].split()[0])
-        self.allvars = (self.date, self.time, self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
+        self.allvars = (self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
             self.ntheth, self.mtheta, self.nphih, self.mphia, self.nhparm, self.nparm, self.nnb, self.nres, self.nbona,
             self.ntheta, self.nphia, self.numbnd, self.numang, self.nptra, self.natyp, self.nphb, self.ifbox, self.nmxrs,
             self.ifcap, self.nextra, self.ncopy, self.imin, self.nmropt, self.ntx, self.irest, self.ntrxi, self.ntxo,
