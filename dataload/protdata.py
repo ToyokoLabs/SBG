@@ -29,11 +29,12 @@ three_letter = []
 for index in protein_letters_1to3:
     three_letter.append(protein_letters_1to3[index].upper())
 
-df_def = {'sphere_radius':[],
+df_def = {'name': [],
+    'replica': [],
+    'sphere_radius':[],
         'natom':[],
         'ntypes':[],
         'nbonh':[],
-        'natom':[],
         'mbona':[],
         'ntheth':[],
         'mtheta':[],

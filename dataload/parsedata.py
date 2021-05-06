@@ -270,7 +270,7 @@ class Parsedata():
                 self.rmsf_eelec = float(x[1].split()[0])
                 self.rmsf_ehbond = float(x[2].split()[0])
                 self.rmsf_restraint = float(x[3].split()[0])
-        self.allvars = (self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
+        self.allvars = [self.sphere_radius, self.natom, self.ntypes, self.nbonh, self.mbona,
             self.ntheth, self.mtheta, self.nphih, self.mphia, self.nhparm, self.nparm, self.nnb, self.nres, self.nbona,
             self.ntheta, self.nphia, self.numbnd, self.numang, self.nptra, self.natyp, self.nphb, self.ifbox, self.nmxrs,
             self.ifcap, self.nextra, self.ncopy, self.imin, self.nmropt, self.ntx, self.irest, self.ntrxi, self.ntxo,
@@ -285,17 +285,17 @@ class Parsedata():
             self.rmsf_time_ps, self.rmsf_temp_k, self.rmsf_press, self.rmsf_etot, self.rmsf_ektot, self.rmsf_eptot,
             self.rmsf_bond, self.rmsf_angle, self.rmsf_dihed, self.rmsf_nb, self.rmsf_eel, self.rmsf_vdwaals,
             self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint,
-            self.timeps0,self.tempk0,self.press0,self.etot0,self.ektot0,self.eptot0,self.bond0,self.angle0,
-            self.dihed0,self.one4NB0,self.one4EEL0,self.VDWAALS0,
-            self.EELEC0,self.EHBOND0,self.RESTRAINT0,
-            self.timeps500000,self.tempk500000,self.press500000,self.etot500000,self.ektot500000,self.eptot500000,
-            self.bond500000,self.angle500000,self.dihed500000,self.one4NB500000,self.one4EEL500000,self.VDWAALS500000,
-            self.EELEC500000,self.EHBOND500000,self.RESTRAINT500000,
-            self.timeps1000000,self.tempk1000000,self.press1000000,self.etot1000000,self.ektot1000000,
-            self.eptot1000000,self.bond1000000,self.angle1000000,self.dihed1000000,self.one4NB1000000,
-            self.one4EEL1000000,self.VDWAALS1000000,
-            self.EELEC1000000,self.EHBOND1000000,self.RESTRAINT1000000,
-            )
+            self.timeps0, self.tempk0, self.press0, self.etot0,self.ektot0,self.eptot0,self.bond0,self.angle0,
+            self.dihed0, self.one4NB0, self.one4EEL0,self.VDWAALS0,
+            self.EELEC0, self.EHBOND0, self.RESTRAINT0,
+            self.timeps500000, self.tempk500000, self.press500000, self.etot500000, self.ektot500000,self.eptot500000,
+            self.bond500000, self.angle500000, self.dihed500000, self.one4NB500000, self.one4EEL500000,self.VDWAALS500000,
+            self.EELEC500000, self.EHBOND500000,self.RESTRAINT500000,
+            self.timeps1000000, self.tempk1000000, self.press1000000, self.etot1000000, self.ektot1000000,
+            self.eptot1000000, self.bond1000000, self.angle1000000, self.dihed1000000, self.one4NB1000000,
+            self.one4EEL1000000, self.VDWAALS1000000,
+            self.EELEC1000000, self.EHBOND1000000, self.RESTRAINT1000000,
+        ]
 
 
 #pd = Parsedata('NARGSERCVAL-R4.dmd.1.out')
