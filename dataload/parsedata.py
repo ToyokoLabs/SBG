@@ -6,10 +6,80 @@ class Parsedata():
 
     def parse(self):
         ave_steps = False
+        nstep0 = False
+        nstep500000 = False
+        nstep1000000 = False
         for line in self.lines:
             if line.startswith('|Largest sphere to fit in unit cell has radius ='):
                 x = line.split('=')
                 self.sphere_radius = float((x[1].strip()))
+            elif 'NSTEP=0' in line.replace(' ', '') and nstep0 == False:
+                nstep0 = True
+                self.timeps0 = float(line.replace(" ","").split('=')[2][:-7])
+                self.tempk0 = float(line.replace(" ","").split('=')[3].replace("PRESS", ''))
+                self.press0 = float(line.replace(" ","").split('=')[4])
+            elif nstep0 == True and line.strip().startswith('Etot'):
+                self.etot0 = float(line.replace(' ','').split('=')[1].replace('EKtot', ''))
+                self.ektot0 = float(line.replace(' ','').split('=')[2].replace('EPtot', ''))
+                self.eptot0 = float(line.replace(' ','').split('=')[3])
+            elif nstep0 == True and line.strip().startswith('BOND'):
+                self.bond0 = float(line.replace(' ','').split('=')[1].replace('ANGLE', ''))
+                self.angle0 = float(line.replace(' ','').split('=')[2].replace('DIHED', ''))
+                self.dihed0 = float(line.replace(' ','').split('=')[3])
+            elif nstep0 == True and line.strip().startswith('1-4 NB'):
+                self.one4NB0 = float(line.replace(' ','').split('=')[1].replace('1-4EEL', ''))
+                self.one4EEL0 = float(line.replace(' ','').split('=')[2].replace('VDWAALS', ''))
+                self.VDWAALS0 = float(line.replace(' ','').split('=')[3])
+            elif nstep0 == True and line.strip().startswith('EELEC'):
+                self.EELEC0 = float(line.replace(' ','').split('=')[1].replace('EHBOND', ''))
+                self.EHBOND0 = float(line.replace(' ','').split('=')[2].replace('RESTRAINT', ''))
+                self.RESTRAINT0 = float(line.replace(' ','').split('=')[3])
+                nstep0 = False
+            elif 'NSTEP=500000' in line.replace(' ', ''):
+                nstep500000 = True
+                self.timeps500000 = float(line.replace(" ","").split('=')[2][:-7])
+                self.tempk500000 = float(line.replace(" ","").split('=')[3].replace("PRESS", ''))
+                self.press500000 = float(line.replace(" ","").split('=')[4])
+            elif nstep500000 == True and line.strip().startswith('Etot'):
+                self.etot500000 = float(line.replace(' ','').split('=')[1].replace('EKtot', ''))
+                self.ektot500000 = float(line.replace(' ','').split('=')[2].replace('EPtot', ''))
+                self.eptot500000 = float(line.replace(' ','').split('=')[3])
+            elif nstep500000 == True and line.strip().startswith('BOND'):
+                self.bond500000 = float(line.replace(' ','').split('=')[1].replace('ANGLE', ''))
+                self.angle500000 = float(line.replace(' ','').split('=')[2].replace('DIHED', ''))
+                self.dihed500000 = float(line.replace(' ','').split('=')[3])
+            elif nstep500000 == True and line.strip().startswith('1-4 NB'):
+                self.one4NB500000 = float(line.replace(' ','').split('=')[1].replace('1-4EEL', ''))
+                self.one4EEL500000 = float(line.replace(' ','').split('=')[2].replace('VDWAALS', ''))
+                self.VDWAALS500000 = float(line.replace(' ','').split('=')[3])
+            elif nstep500000 == True and line.strip().startswith('EELEC'):
+                self.EELEC500000 = float(line.replace(' ','').split('=')[1].replace('EHBOND', ''))
+                self.EHBOND500000 = float(line.replace(' ','').split('=')[2].replace('RESTRAINT', ''))
+                self.RESTRAINT500000 = float(line.replace(' ','').split('=')[3])
+                nstep500000 = False
+            elif 'NSTEP=1000000' in line.replace(' ', '') and ave_steps==False:
+                nstep1000000 = True
+                self.timeps1000000 = float(line.replace(" ","").split('=')[2][:-7])
+                self.tempk1000000 = float(line.replace(" ","").split('=')[3].replace("PRESS", ''))
+                self.press1000000 = float(line.replace(" ","").split('=')[4])
+            elif nstep1000000 == True and line.strip().startswith('Etot'):
+                self.etot1000000 = float(line.replace(' ','').split('=')[1].replace('EKtot', ''))
+                self.ektot1000000 = float(line.replace(' ','').split('=')[2].replace('EPtot', ''))
+                self.eptot1000000 = float(line.replace(' ','').split('=')[3])
+            elif nstep1000000 == True and line.strip().startswith('BOND'):
+                self.bond1000000 = float(line.replace(' ','').split('=')[1].replace('ANGLE', ''))
+                self.angle1000000 = float(line.replace(' ','').split('=')[2].replace('DIHED', ''))
+                self.dihed1000000 = float(line.replace(' ','').split('=')[3])
+            elif nstep1000000 == True and line.strip().startswith('1-4 NB'):
+                self.one4NB1000000 = float(line.replace(' ','').split('=')[1].replace('1-4EEL', ''))
+                self.one4EEL1000000 = float(line.replace(' ','').split('=')[2].replace('VDWAALS', ''))
+                self.VDWAALS1000000 = float(line.replace(' ','').split('=')[3])
+            elif nstep1000000 == True and line.strip().startswith('EELEC'):
+                self.EELEC1000000 = float(line.replace(' ','').split('=')[1].replace('EHBOND', ''))
+                self.EHBOND1000000 = float(line.replace(' ','').split('=')[2].replace('RESTRAINT', ''))
+                self.RESTRAINT1000000 = float(line.replace(' ','').split('=')[3])
+                nstep1000000 = False                
+
             elif 'NATOM' in line and 'NTYPES' in line and 'NBONH' in line and 'MBONA' in line:
                 x = line.split('=')
                 self.natom = int(x[1].split()[0])
@@ -214,7 +284,18 @@ class Parsedata():
             self.avg_eel, self.avg_vdwaals, self.avg_eelec, self.avg_ehbond, self.avg_restraint, self.rmsf_nstep,
             self.rmsf_time_ps, self.rmsf_temp_k, self.rmsf_press, self.rmsf_etot, self.rmsf_ektot, self.rmsf_eptot,
             self.rmsf_bond, self.rmsf_angle, self.rmsf_dihed, self.rmsf_nb, self.rmsf_eel, self.rmsf_vdwaals,
-            self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint)
+            self.rmsf_eelec, self.rmsf_ehbond, self.rmsf_restraint,
+            self.timeps0,self.tempk0,self.press0,self.etot0,self.ektot0,self.eptot0,self.bond0,self.angle0,
+            self.dihed0,self.one4NB0,self.one4EEL0,self.VDWAALS0,
+            self.EELEC0,self.EHBOND0,self.RESTRAINT0,
+            self.timeps500000,self.tempk500000,self.press500000,self.etot500000,self.ektot500000,self.eptot500000,
+            self.bond500000,self.angle500000,self.dihed500000,self.one4NB500000,self.one4EEL500000,self.VDWAALS500000,
+            self.EELEC500000,self.EHBOND500000,self.RESTRAINT500000,
+            self.timeps1000000,self.tempk1000000,self.press1000000,self.etot1000000,self.ektot1000000,
+            self.eptot1000000,self.bond1000000,self.angle1000000,self.dihed1000000,self.one4NB1000000,
+            self.one4EEL1000000,self.VDWAALS1000000,
+            self.EELEC1000000,self.EHBOND1000000,self.RESTRAINT1000000,
+            )
 
 
 #pd = Parsedata('NARGSERCVAL-R4.dmd.1.out')

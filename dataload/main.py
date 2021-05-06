@@ -17,9 +17,10 @@ for c in comb:
     for rep in reps:
         pd = parsedata.Parsedata(rep.split('\n'))
         pd.parse()
-        print(peptide)
-        #print(pd.allvars)
+        #print(peptide)
         df.loc[len(df.index)] = pd.allvars[:3]
-    if count == 3:
-        print(df)
+    if count == 50:
+        #print(df)
         break
+
+df.to_pickle('tripepts.pkl')
