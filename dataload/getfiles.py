@@ -16,8 +16,15 @@ class Getfiles3pep():
         """
         results = []
         for replica in range(1,6):
-            x = requests.get(BASE_URL.format(peptide, replica))
+            for tries in range(10):
+                try:
+                    x = requests.get(BASE_URL.format(peptide, replica), 
+                        timeout=30)
+                    break
+                except:
+                    pass
             results.append(x.text)
+            del(x)
         return results
 
 
