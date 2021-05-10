@@ -9,4 +9,4 @@ with open('all3pep', 'w') as fho:
     for c in comb:
         peptide = ''.join(c)
         canonical_name = peptide[:6] + 'C' + peptide[6:]
-        fho.write(canonical_name + '\n')
+        fho.write(canonical_name+'\n')
