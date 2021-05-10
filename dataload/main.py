@@ -5,7 +5,7 @@ from protdata import _3_letter, df_def
 
 
 peprepo = 'all3pep'
-count = 4200
+count = 4201
 
 with open(peprepo) as fhi:
     peps = fhi.readlines()
