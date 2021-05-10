@@ -1,7 +1,7 @@
 import getfiles, parsedata
 import pandas as pd
 from itertools import product
-from protdata import _3_letter, df_def
+from protdata import df_def
 
 
 peprepo = 'all3pep'
@@ -21,7 +21,6 @@ gf = getfiles.Getfiles3pep()
 
 #reps = gf.get('METASNCPHE')
 #pd = parsedata.Parsedata(reps[1].split('\n'))
-#pd.parse()
 
 for pep in peps:
     count += 1
