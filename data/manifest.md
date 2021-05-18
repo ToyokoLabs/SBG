@@ -18,3 +18,17 @@ Inside each tarball, there are up to 4 files:
 3. crd file: BINARY. Coordinate file from Sander  (like NVALALAPROALACTHR-R3.prod.1.crd)
 4. top file TEXT Topology file from Tleap (like p.1.top). **Note:** This file is not present in R1 packages.
 
+# File location
+
+For tripeptides, each file is stored as they were generated, for ALAALACALA, this is the *out file*:
+
+https://toyokounqpeptides.s3-us-west-2.amazonaws.com/tripep/NALAALACALA-R1.dmd.1.out
+
+
+For pentapeptides, each run data is compressed in a tar.bz2 file.
+
+for ALA-ALA-ALA-ALA-ALA, replica 1:
+
+https://toyokounqpeptides.s3-us-west-2.amazonaws.com/5pep/NALAALAALAALACALA-R1.tar.bz2
+
+
