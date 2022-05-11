@@ -21,10 +21,7 @@ gf = getfiles.Getfiles3pep()
 
 #reps = gf.get('METASNCPHE')
 #pd = parsedata.Parsedata(reps[1].split('\n'))
-<<<<<<< HEAD
-=======
 #pd.parse() SOMETHING NEW
->>>>>>> 2f6e494ae29b933c1e7c6eed1f3bef57579613b4
 
 for pep in peps:
     count += 1
