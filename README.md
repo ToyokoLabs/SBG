@@ -1,11 +1,5 @@
-# SBG
+# Conformational Space of Short Peptides
 
-This is a software repository for the [SBG (Structure Bioinformatics Groups)](http://ufq.unq.edu.ar/sbg/) from the UNQ (Universidad Nacional de Quilmes).
-
-Our main interests are: Development of tools for the quality assessment of protein models; Study of the role of conformational diversity in protein evolution; Study of protein-protein interactions using structurally constrained models of sequence evolution; Study of the sequence-structure relationships in allergenic proteins.
-
-This repository has information related to Conformational Space of Short Peptides project. Where we calculated the structure of all peptides up to 5 Amino Acid, using Amber.
-
-List of publications of the SBG group: http://ufq.unq.edu.ar/sbg/publications.html
+Co-managed by [Toyoko Bio](https://www.toyoko.io/) and the [SBG (Structure Bioinformatics Groups)](http://ufq.unq.edu.ar/sbg/), in this repository we explore the conformational space of all possible peptides using the 20 common amino acids. It consists of a collection of exhaustive molecular dynamics simulations of tripeptides and pentapeptides.
 
 For more information on the data format please check the [manifiest file](https://github.com/ToyokoLabs/SBG/blob/master/data/manifest.md).
